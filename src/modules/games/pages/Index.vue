@@ -23,7 +23,7 @@
           <v-card-subtitle
             class="subtitle-2 text-center pa-0 mb-4 blue--text text--lighten-1"
           >
-            {{ item.price }}
+            {{ item.price | number("$ 0.0,") }}
           </v-card-subtitle>
         </v-card>
       </v-col>
