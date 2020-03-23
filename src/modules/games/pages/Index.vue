@@ -1,44 +1,35 @@
 <template>
   <v-container>
-    <div class="d-flex flex-column">
-      <h1>Games</h1>
-      <v-card outlined>
-        <v-simple-table>
-          <template v-slot:default>
-            <thead>
-              <tr>
-                <th class="text-left">Name</th>
-                <th class="text-left">E-mail</th>
-                <th class="text-left">Empresa</th>
-                <th class="text-right">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in list" :key="item.id">
-                <td>{{ item.name }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.company && item.company.name }}</td>
-                <td class="text-right">
-                  <router-link :to="`/users/${item.id}`" v-slot="{ navigate }">
-                    <v-btn @click="navigate" text icon>
-                      <!-- All icons: https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/services/icons/presets/mdi.ts -->
-                      <v-icon>mdi-pencil</v-icon>
-                    </v-btn>
-                  </router-link>
-                  <v-btn @click="deleteItem(item)" text icon>
-                    <!-- All icons: https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/services/icons/presets/mdi.ts -->
-                    <v-icon>mdi-delete</v-icon>
-                  </v-btn>
-                </td>
-              </tr>
-            </tbody>
-          </template>
-        </v-simple-table>
-      </v-card>
-    </div>
+    <v-row class="mb-8">
+      <v-col cols="12" sm="6">
+        <h1>Games</h1>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col v-for="item in list" :key="item.id" cols="12" sm="4">
+        <v-card outlined>
+          <div class="card-header pa-4 mb-2 grey lighten-2">
+            <v-img
+              class="align-self-center mx-auto my-6"
+              :src="require(`@/assets/${item.image}`)"
+              height="180px"
+              aspect-ratio="1.7"
+              contain
+            />
+          </div>
+          <v-card-subtitle class="subtitle-1 text-center pa-1">
+            {{ item.name }}
+          </v-card-subtitle>
+          <v-card-subtitle
+            class="subtitle-2 text-center pa-0 mb-4 blue--text text--lighten-1"
+          >
+            {{ item.price }}
+          </v-card-subtitle>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
-
 <script>
 import { mapState, mapActions, mapMutations } from "vuex";
 
