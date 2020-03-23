@@ -3,7 +3,7 @@ export default {
     state.list = list;
   },
   deleteItem(state, id) {
-    state.list = state.list.filter(user => user.id !== id);
+    state.list = state.list.filter(game => game.id !== id);
   },
   setItem(state, item) {
     state.item = item;

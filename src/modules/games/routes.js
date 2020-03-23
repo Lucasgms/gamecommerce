@@ -3,7 +3,7 @@ import Index from "./pages/Index.vue";
 export default [
   {
     path: "/",
-    name: "Dashboard",
+    name: "Main",
     component: Index
   }
 ];
