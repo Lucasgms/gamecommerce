@@ -1,12 +1,7 @@
 <template>
   <v-container>
     <div class="d-flex flex-column">
-      <h1>Users</h1>
-      <router-link to="/users/new" v-slot="{ navigate }">
-        <v-btn class="align-self-end mb-10" @click="navigate" color="primary"
-          >Novo usuário</v-btn
-        >
-      </router-link>
+      <h1>Games</h1>
       <v-card outlined>
         <v-simple-table>
           <template v-slot:default>
@@ -48,7 +43,7 @@
 import { mapState, mapActions, mapMutations } from "vuex";
 
 export default {
-  name: "UsersIndex",
+  name: "GamesIndex",
   mounted() {
     this.getList();
   },
@@ -56,11 +51,11 @@ export default {
     this.clearList();
   },
   computed: {
-    ...mapState("users", ["list"])
+    ...mapState("games", ["list"])
   },
   methods: {
-    ...mapActions("users", ["getList", "deleteItem"]),
-    ...mapMutations("users", ["clearList"])
+    ...mapActions("games", ["getList", "deleteItem"]),
+    ...mapMutations("games", ["clearList"])
   }
 };
 </script>

@@ -1,119 +1,67 @@
 {
-  "users": [
+  "games": [
     {
-      "id": 1,
-      "name": "Leanne Graham",
-      "username": "Bret",
-      "email": "Sincere@april.biz",
-      "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874",
-        "geo": {
-          "lat": "-37.3159",
-          "lng": "81.1496"
-        }
-      },
-      "phone": "1-770-736-8031 x56442",
-      "website": "hildegard.org",
-      "company": {
-        "name": "Romaguera-Crona",
-        "catchPhrase": "Multi-layered client-server neural-net",
-        "bs": "harness real-time e-markets"
-      }
+      "id": 312,
+      "name": "Super Mario Odyssey",
+      "price": 197.88,
+      "score": 100,
+      "image": "super-mario-odyssey.png"
     },
     {
-      "id": 2,
-      "name": "Ervin Howell",
-      "username": "Antonette",
-      "email": "Shanna@melissa.tv",
-      "address": {
-        "street": "Victor Plains",
-        "suite": "Suite 879",
-        "city": "Wisokyburgh",
-        "zipcode": "90566-7771",
-        "geo": {
-          "lat": "-43.9509",
-          "lng": "-34.4618"
-        }
-      },
-      "phone": "010-692-6593 x09125",
-      "website": "anastasia.net",
-      "company": {
-        "name": "Deckow-Crist",
-        "catchPhrase": "Proactive didactic contingency",
-        "bs": "synergize scalable supply-chains"
-      }
+      "id": 201,
+      "name": "Call Of Duty Infinite Warfare",
+      "price": 49.99,
+      "score": 80,
+      "image": "call-of-duty-infinite-warfare.png"
     },
     {
-      "id": 3,
-      "name": "Clementine Bauch",
-      "username": "Samantha",
-      "email": "Nathan@yesenia.net",
-      "address": {
-        "street": "Douglas Extension",
-        "suite": "Suite 847",
-        "city": "McKenziehaven",
-        "zipcode": "59590-4157",
-        "geo": {
-          "lat": "-68.6102",
-          "lng": "-47.0653"
-        }
-      },
-      "phone": "1-463-123-4447",
-      "website": "ramiro.info",
-      "company": {
-        "name": "Romaguera-Jacobson",
-        "catchPhrase": "Face to face bifurcated interface",
-        "bs": "e-enable strategic applications"
-      }
+      "id": 102,
+      "name": "The Witcher III Wild Hunt",
+      "price": 119.5,
+      "score": 250,
+      "image": "the-witcher-iii-wild-hunt.png"
     },
     {
-      "id": 4,
-      "name": "Patricia Lebsack",
-      "username": "Karianne",
-      "email": "Julianne.OConner@kory.org",
-      "address": {
-        "street": "Hoeger Mall",
-        "suite": "Apt. 692",
-        "city": "South Elvis",
-        "zipcode": "53919-4257",
-        "geo": {
-          "lat": "29.4572",
-          "lng": "-164.2990"
-        }
-      },
-      "phone": "493-170-9623 x156",
-      "website": "kale.biz",
-      "company": {
-        "name": "Robel-Corkery",
-        "catchPhrase": "Multi-tiered zero tolerance productivity",
-        "bs": "transition cutting-edge web services"
-      }
+      "id": 99,
+      "name": "Call Of Duty WWII",
+      "price": 249.99,
+      "score": 205,
+      "image": "call-of-duty-wwii.png"
     },
     {
-      "id": 5,
-      "name": "Chelsey Dietrich",
-      "username": "Kamren",
-      "email": "Lucio_Hettinger@annie.ca",
-      "address": {
-        "street": "Skiles Walks",
-        "suite": "Suite 351",
-        "city": "Roscoeview",
-        "zipcode": "33263",
-        "geo": {
-          "lat": "-31.8129",
-          "lng": "62.5342"
-        }
-      },
-      "phone": "(254)954-1289",
-      "website": "demarco.info",
-      "company": {
-        "name": "Keebler LLC",
-        "catchPhrase": "User-centric fault-tolerant solution",
-        "bs": "revolutionize end-to-end systems"
-      }
+      "id": 12,
+      "name": "Mortal Kombat XL",
+      "price": 69.99,
+      "score": 150,
+      "image": "mortal-kombat-xl.png"
+    },
+    {
+      "id": 74,
+      "name": "Shards of Darkness",
+      "price": 71.94,
+      "score": 400,
+      "image": "shards-of-darkness.png"
+    },
+    {
+      "id": 31,
+      "name": "Terra Média: Sombras de Mordor",
+      "price": 79.99,
+      "score": 50,
+      "image": "terra-media-sombras-de-mordor.png"
+    },
+    {
+      "id": 420,
+      "name": "FIFA 18",
+      "price": 195.39,
+      "score": 325,
+      "image": "fifa-18.png"
+    },
+    {
+      "id": 501,
+      "name": "Horizon Zero Dawn",
+      "price": 115.8,
+      "score": 290,
+      "image": "horizon-zero-dawn.png"
     }
   ]
 }

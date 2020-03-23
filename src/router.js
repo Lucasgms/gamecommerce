@@ -1,11 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import { routes as users } from "@/modules/users";
-import { routes as dashboard } from "@/modules/dashboard";
+import { routes as games } from "@/modules/games";
 
 Vue.use(VueRouter);
 
-const routes = [...dashboard, ...users];
+const routes = [...games];
 
 const router = new VueRouter({
   mode: "history",
