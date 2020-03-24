@@ -45,7 +45,7 @@
   </v-container>
 </template>
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 
 export default {
   name: "GamesIndex",
@@ -56,7 +56,7 @@ export default {
     this.clearList();
   },
   computed: {
-    ...mapState("games", ["list"])
+    ...mapGetters("games", { list: "getOrdenatedList" })
   },
   methods: {
     ...mapActions("games", ["getList", "deleteItem"]),
