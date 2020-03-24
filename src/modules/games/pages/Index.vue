@@ -3,8 +3,8 @@
     <v-row>
       <v-col cols="12" sm="8">
         <v-container>
-          <v-row class="mb-8">
-            <v-col cols="12" sm="6">
+          <v-row>
+            <v-col class="pb-0" cols="12" sm="6">
               <h1>Games</h1>
             </v-col>
             <v-col cols="12" sm="4" offset-sm="2">
