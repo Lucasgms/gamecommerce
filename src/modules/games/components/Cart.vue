@@ -29,42 +29,9 @@
       />
     </v-list>
     <v-container v-show="cartItems.length > 0" class="cart-resume">
-      <v-row class="align-center">
-        <v-col cols="12" sm="6">
-          <v-card-text class="text-left py-0 px-2 font-weight-light subtitle-1">
-            subtotal
-          </v-card-text>
-        </v-col>
-        <v-col cols="12" sm="6">
-          <v-card-text class="text-right py-0 px-2 font-weight-bold subtitle-1">
-            {{ cartSubtotal | number("$ 0.0,") }}
-          </v-card-text>
-        </v-col>
-      </v-row>
-      <v-row class="align-center">
-        <v-col cols="12" sm="6">
-          <v-card-text class="text-left py-0 px-2 font-weight-light subtitle-1">
-            frete
-          </v-card-text>
-        </v-col>
-        <v-col cols="12" sm="6">
-          <v-card-text class="text-right py-0 px-2 font-weight-bold subtitle-1">
-            {{ cartShipping | number("$ 0.0,") }}
-          </v-card-text>
-        </v-col>
-      </v-row>
-      <v-row class="align-center">
-        <v-col cols="12" sm="6">
-          <v-card-text class="text-left py-0 px-2 font-weight-light subtitle-1">
-            total
-          </v-card-text>
-        </v-col>
-        <v-col cols="12" sm="6">
-          <v-card-text class="text-right py-0 px-2 font-weight-bold title">
-            {{ cartTotal | number("$ 0.0,") }}
-          </v-card-text>
-        </v-col>
-      </v-row>
+      <CartResumeItem label="subtotal" :value="cartSubtotal" />
+      <CartResumeItem label="frete" :value="cartShipping" />
+      <CartResumeItem label="total" :value="cartTotal" />
       <v-card-actions class="justify-strech">
         <v-btn class="white--text" color="blue" block large>
           Finalizar compra
@@ -76,11 +43,13 @@
 <script>
 import { mapState, mapGetters, mapMutations } from "vuex";
 import CartItem from "../components/CartItem.vue";
+import CartResumeItem from "../components/CartResumeItem.vue";
 
 export default {
   name: "Cart",
   components: {
-    CartItem
+    CartItem,
+    CartResumeItem
   },
   computed: {
     ...mapState("games", ["cartItems"]),
