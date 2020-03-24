@@ -29,7 +29,7 @@
             Carrinho
           </v-card-title>
           <v-card-subtitle
-            v-show="cartItems.length > 0"
+            v-if="cartItems.length > 0"
             class="d-inline-block pa-0 pl-1 py-4"
           >
             ({{ cartItems.length }}
