@@ -47,24 +47,12 @@
             </v-card-subtitle>
           </div>
           <v-list two-line v-show="cartItems.length > 0" class="cart-items">
-            <v-hover v-for="(item, index) in cartItems" :key="item.id">
-              <template v-slot="{ hover }">
-                <v-list-item @click="removeCardItem(index)">
-                  <v-list-item-avatar tile>
-                    <v-img :src="require(`@/assets/${item.image}`)" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>
-                    <v-list-item-title>{{ item.name }}</v-list-item-title>
-                    <v-list-item-subtitle class="font-weight-bold black--text">
-                      {{ item.price | number("$ 0.0,") }}
-                    </v-list-item-subtitle>
-                  </v-list-item-content>
-                  <v-list-item-action v-show="hover">
-                    <v-icon color="blue" small>mdi-close-circle</v-icon>
-                  </v-list-item-action>
-                </v-list-item>
-              </template>
-            </v-hover>
+            <CartItem
+              v-for="(item, index) in cartItems"
+              :key="item.id"
+              :item="item"
+              @click="removeCardItem(index)"
+            />
           </v-list>
           <v-container v-show="cartItems.length > 0" class="cart-resume">
             <v-row class="align-center">
@@ -129,11 +117,13 @@
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 import GameCard from "../components/GameCard.vue";
+import CartItem from "../components/CartItem.vue";
 
 export default {
   name: "GamesIndex",
   components: {
-    GameCard
+    GameCard,
+    CartItem
   },
   mounted() {
     this.getList();
