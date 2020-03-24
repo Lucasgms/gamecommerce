@@ -13,5 +13,8 @@ export default {
   },
   clearItem(state) {
     state.item = {};
+  },
+  setOrderBy(state, order) {
+    state.orderBy = order;
   }
 };
