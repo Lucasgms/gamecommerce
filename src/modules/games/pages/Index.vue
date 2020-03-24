@@ -69,12 +69,16 @@
           <v-container class="cart-resume">
             <v-row class="align-center">
               <v-col cols="12" sm="6">
-                <v-card-text class="text-left pa-2 subtitle-2">
+                <v-card-text
+                  class="text-left pa-2 font-weight-light subtitle-1"
+                >
                   subtotal
                 </v-card-text>
               </v-col>
               <v-col cols="12" sm="6">
-                <v-card-text class="text-right pa-2 font-weight-bold title">
+                <v-card-text
+                  class="text-right pa-2 font-weight-bold subtitle-1"
+                >
                   {{ cartSubtotal | number("$ 0.0,") }}
                 </v-card-text>
               </v-col>
