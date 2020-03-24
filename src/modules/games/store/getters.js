@@ -8,5 +8,16 @@ export default {
 
       return sortOrder;
     });
+  },
+  getCartSubtotal(state) {
+    if (state.cartItems.length) {
+      return state.cartItems
+        .map(item => item.price)
+        .reduce((total, current) => {
+          return total + current;
+        });
+    }
+
+    return 0;
   }
 };

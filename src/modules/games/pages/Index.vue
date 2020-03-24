@@ -66,6 +66,20 @@
               </template>
             </v-hover>
           </v-list>
+          <v-container class="cart-resume">
+            <v-row class="align-center">
+              <v-col cols="12" sm="6">
+                <v-card-text class="text-left pa-2 subtitle-2">
+                  subtotal
+                </v-card-text>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-card-text class="text-right pa-2 font-weight-bold title">
+                  {{ cartSubtotal | number("$ 0.0,") }}
+                </v-card-text>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-card>
       </v-col>
     </v-row>
@@ -88,7 +102,10 @@ export default {
   },
   computed: {
     ...mapState("games", ["ordenationOptions", "orderBy", "cartItems"]),
-    ...mapGetters("games", { list: "getOrdenatedList" }),
+    ...mapGetters("games", {
+      list: "getOrdenatedList",
+      cartSubtotal: "getCartSubtotal"
+    }),
     listOrder: {
       get() {
         return this.orderBy;
