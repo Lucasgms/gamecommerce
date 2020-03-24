@@ -70,16 +70,32 @@
             <v-row class="align-center">
               <v-col cols="12" sm="6">
                 <v-card-text
-                  class="text-left pa-2 font-weight-light subtitle-1"
+                  class="text-left py-0 px-2 font-weight-light subtitle-1"
                 >
                   subtotal
                 </v-card-text>
               </v-col>
               <v-col cols="12" sm="6">
                 <v-card-text
-                  class="text-right pa-2 font-weight-bold subtitle-1"
+                  class="text-right py-0 px-2 font-weight-bold subtitle-1"
                 >
                   {{ cartSubtotal | number("$ 0.0,") }}
+                </v-card-text>
+              </v-col>
+            </v-row>
+            <v-row class="align-center">
+              <v-col cols="12" sm="6">
+                <v-card-text
+                  class="text-left py-0 px-2 font-weight-light subtitle-1"
+                >
+                  frete
+                </v-card-text>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-card-text
+                  class="text-right py-0 px-2 font-weight-bold subtitle-1"
+                >
+                  {{ cartShipping | number("$ 0.0,") }}
                 </v-card-text>
               </v-col>
             </v-row>
@@ -108,7 +124,8 @@ export default {
     ...mapState("games", ["ordenationOptions", "orderBy", "cartItems"]),
     ...mapGetters("games", {
       list: "getOrdenatedList",
-      cartSubtotal: "getCartSubtotal"
+      cartSubtotal: "getCartSubtotal",
+      cartShipping: "getCartShipping"
     }),
     listOrder: {
       get() {
