@@ -23,7 +23,7 @@
         </div>
         <v-card-actions class="actions pa-3 justify-center" v-show="hover">
           <v-btn color="blue" elevation="0" text large>
-            Adicionar ao carrinho
+            {{ inCart ? "Remover do" : "Adicionar ao" }} carrinho
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -34,7 +34,8 @@
 export default {
   name: "GameCard",
   props: {
-    game: Object
+    game: Object,
+    inCart: Boolean
   }
 };
 </script>

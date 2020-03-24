@@ -22,10 +22,10 @@
     </div>
     <v-list two-line v-show="cartItems.length > 0" class="cart-items">
       <CartItem
-        v-for="(item, index) in cartItems"
+        v-for="item in cartItems"
         :key="item.id"
         :item="item"
-        @click="removeCardItem(index)"
+        @click="removeCartItem(item)"
       />
     </v-list>
     <v-container v-show="cartItems.length > 0" class="cart-resume">
@@ -60,7 +60,7 @@ export default {
     })
   },
   methods: {
-    ...mapMutations("games", ["addCartItem", "removeCardItem"])
+    ...mapMutations("games", ["addCartItem", "removeCartItem"])
   }
 };
 </script>
