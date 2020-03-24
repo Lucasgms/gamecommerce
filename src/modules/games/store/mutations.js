@@ -16,5 +16,8 @@ export default {
   },
   setOrderBy(state, order) {
     state.orderBy = order;
+  },
+  addCartItem(state, item) {
+    if (state.cartItems.indexOf(item) === -1) state.cartItems.push(item);
   }
 };
