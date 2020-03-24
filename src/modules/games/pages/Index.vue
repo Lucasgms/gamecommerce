@@ -25,9 +25,16 @@
       </v-col>
       <v-col class="pa-9" cols="12" sm="4">
         <v-card outlined>
-          <v-card-title class="font-weight-bold pb-2">
+          <v-card-title class="font-weight-bold pb-2 pr-1 d-inline-block">
             Carrinho
           </v-card-title>
+          <v-card-subtitle
+            v-show="cartItems.length > 0"
+            class="d-inline-block pa-0 pl-1 py-4"
+          >
+            ({{ cartItems.length }}
+            {{ cartItems.length === 1 ? "item" : "itens" }})
+          </v-card-subtitle>
           <div v-show="cartItems.length === 0" class="cart-content--empty my-8">
             <v-img
               class="align-self-center mx-auto"
