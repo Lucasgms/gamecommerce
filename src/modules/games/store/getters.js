@@ -22,5 +22,8 @@ export default {
   },
   getCartShipping(state, getters) {
     return getters.getCartSubtotal >= 250.0 ? 0 : state.cartItems.length * 10;
+  },
+  getCartTotal(state, getters) {
+    return getters.getCartSubtotal + getters.getCartShipping;
   }
 };

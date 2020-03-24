@@ -66,7 +66,7 @@
               </template>
             </v-hover>
           </v-list>
-          <v-container class="cart-resume">
+          <v-container v-show="cartItems.length > 0" class="cart-resume">
             <v-row class="align-center">
               <v-col cols="12" sm="6">
                 <v-card-text
@@ -99,6 +99,27 @@
                 </v-card-text>
               </v-col>
             </v-row>
+            <v-row class="align-center">
+              <v-col cols="12" sm="6">
+                <v-card-text
+                  class="text-left py-0 px-2 font-weight-light subtitle-1"
+                >
+                  total
+                </v-card-text>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-card-text
+                  class="text-right py-0 px-2 font-weight-bold title"
+                >
+                  {{ cartTotal | number("$ 0.0,") }}
+                </v-card-text>
+              </v-col>
+            </v-row>
+            <v-card-actions class="justify-strech">
+              <v-btn class="white--text" color="blue" block large>
+                Finalizar compra
+              </v-btn>
+            </v-card-actions>
           </v-container>
         </v-card>
       </v-col>
@@ -125,7 +146,8 @@ export default {
     ...mapGetters("games", {
       list: "getOrdenatedList",
       cartSubtotal: "getCartSubtotal",
-      cartShipping: "getCartShipping"
+      cartShipping: "getCartShipping",
+      cartTotal: "getCartTotal"
     }),
     listOrder: {
       get() {
