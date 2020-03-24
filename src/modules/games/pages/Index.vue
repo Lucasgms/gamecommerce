@@ -4,6 +4,9 @@
       <v-col cols="12" sm="6">
         <h1>Games</h1>
       </v-col>
+      <v-col cols="12" sm="3" offset-sm="3">
+        <v-select :items="ordenationOptions" :full-width="false" outlined />
+      </v-col>
     </v-row>
     <v-row>
       <v-col v-for="item in list" :key="item.id" cols="12" sm="4">
@@ -45,7 +48,7 @@
   </v-container>
 </template>
 <script>
-import { mapGetters, mapActions, mapMutations } from "vuex";
+import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 
 export default {
   name: "GamesIndex",
@@ -56,6 +59,7 @@ export default {
     this.clearList();
   },
   computed: {
+    ...mapState("games", ["ordenationOptions"]),
     ...mapGetters("games", { list: "getOrdenatedList" })
   },
   methods: {

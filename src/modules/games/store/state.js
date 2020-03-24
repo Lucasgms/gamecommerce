@@ -1,5 +1,19 @@
 export default () => ({
   list: [],
   item: {},
-  orderBy: "score"
+  orderBy: "score",
+  ordenationOptions: [
+    {
+      text: "Popularidade",
+      value: "score"
+    },
+    {
+      text: "Preço",
+      value: "price"
+    },
+    {
+      text: "Ordem Alfabética",
+      value: "name"
+    }
+  ]
 });
