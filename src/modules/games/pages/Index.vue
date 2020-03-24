@@ -1,13 +1,13 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" sm="8">
+      <v-col cols="12" md="8">
         <v-container>
-          <v-row class="mb-8">
-            <v-col cols="12" sm="6">
+          <v-row>
+            <v-col class="pb-0" cols="12" md="6">
               <h1>Games</h1>
             </v-col>
-            <v-col cols="12" sm="4" offset-sm="2">
+            <v-col cols="12" md="4" offset-md="2">
               <v-select
                 :items="ordenationOptions"
                 :full-width="false"
@@ -27,7 +27,7 @@
           </v-row>
         </v-container>
       </v-col>
-      <v-col class="pa-9" cols="12" sm="4">
+      <v-col class="pa-9" cols="12" md="4">
         <Cart />
       </v-col>
     </v-row>
