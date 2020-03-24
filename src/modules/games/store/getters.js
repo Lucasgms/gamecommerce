@@ -8,5 +8,22 @@ export default {
 
       return sortOrder;
     });
+  },
+  getCartSubtotal(state) {
+    if (state.cartItems.length) {
+      return state.cartItems
+        .map(item => item.price)
+        .reduce((total, current) => {
+          return total + current;
+        });
+    }
+
+    return 0;
+  },
+  getCartShipping(state, getters) {
+    return getters.getCartSubtotal >= 250.0 ? 0 : state.cartItems.length * 10;
+  },
+  getCartTotal(state, getters) {
+    return getters.getCartSubtotal + getters.getCartShipping;
   }
 };

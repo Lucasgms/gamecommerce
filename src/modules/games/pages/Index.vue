@@ -1,21 +1,30 @@
 <template>
   <v-container>
-    <v-row class="mb-8">
-      <v-col cols="12" sm="6">
-        <h1>Games</h1>
-      </v-col>
-      <v-col cols="12" sm="3" offset-sm="3">
-        <v-select
-          :items="ordenationOptions"
-          :full-width="false"
-          v-model="listOrder"
-          outlined
-        />
-      </v-col>
-    </v-row>
     <v-row>
-      <v-col v-for="item in list" :key="item.id" cols="12" sm="4">
-        <GameCard :game="item" />
+      <v-col cols="12" sm="8">
+        <v-container>
+          <v-row class="mb-8">
+            <v-col cols="12" sm="6">
+              <h1>Games</h1>
+            </v-col>
+            <v-col cols="12" sm="4" offset-sm="2">
+              <v-select
+                :items="ordenationOptions"
+                :full-width="false"
+                v-model="listOrder"
+                outlined
+              />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col v-for="item in list" :key="item.id" cols="12" sm="4">
+              <GameCard :game="item" @click.native="addCartItem(item)" />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-col>
+      <v-col class="pa-9" cols="12" sm="4">
+        <Cart />
       </v-col>
     </v-row>
   </v-container>
@@ -23,11 +32,13 @@
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 import GameCard from "../components/GameCard.vue";
+import Cart from "../components/Cart.vue";
 
 export default {
   name: "GamesIndex",
   components: {
-    GameCard
+    GameCard,
+    Cart
   },
   mounted() {
     this.getList();
@@ -49,7 +60,12 @@ export default {
   },
   methods: {
     ...mapActions("games", ["getList", "deleteItem"]),
-    ...mapMutations("games", ["clearList", "setOrderBy"])
+    ...mapMutations("games", [
+      "clearList",
+      "setOrderBy",
+      "addCartItem",
+      "removeCardItem"
+    ])
   }
 };
 </script>

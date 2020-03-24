@@ -1,4 +1,5 @@
 export default () => ({
+  cartItems: [],
   list: [],
   item: {},
   orderBy: "score",
