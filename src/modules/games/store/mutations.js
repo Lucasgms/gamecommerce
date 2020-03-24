@@ -19,5 +19,8 @@ export default {
   },
   addCartItem(state, item) {
     if (state.cartItems.indexOf(item) === -1) state.cartItems.push(item);
+  },
+  removeCardItem(state, index) {
+    if (state.cartItems[index]) state.cartItems.splice(index, 1);
   }
 };

@@ -47,9 +47,9 @@
             </v-card-subtitle>
           </div>
           <v-list two-line v-show="cartItems.length > 0" class="cart-items">
-            <v-hover v-for="item in cartItems" :key="item.id">
+            <v-hover v-for="(item, index) in cartItems" :key="item.id">
               <template v-slot="{ hover }">
-                <v-list-item>
+                <v-list-item @click="removeCardItem(index)">
                   <v-list-item-avatar tile>
                     <v-img :src="require(`@/assets/${item.image}`)" />
                   </v-list-item-avatar>
@@ -100,7 +100,12 @@ export default {
   },
   methods: {
     ...mapActions("games", ["getList", "deleteItem"]),
-    ...mapMutations("games", ["clearList", "setOrderBy", "addCartItem"])
+    ...mapMutations("games", [
+      "clearList",
+      "setOrderBy",
+      "addCartItem",
+      "removeCardItem"
+    ])
   }
 };
 </script>
