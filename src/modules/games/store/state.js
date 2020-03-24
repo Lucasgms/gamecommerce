@@ -8,11 +8,19 @@ export default () => ({
       value: "score"
     },
     {
-      text: "Preço",
+      text: "Preço (Maior - Menor)",
       value: "price"
     },
     {
-      text: "Ordem Alfabética",
+      text: "Preço (Menor - Maior)",
+      value: "price:ascendent"
+    },
+    {
+      text: "Ordem Alfabética (A - Z)",
+      value: "name:ascendent"
+    },
+    {
+      text: "Ordem Alfabética (Z - A)",
       value: "name"
     }
   ]
