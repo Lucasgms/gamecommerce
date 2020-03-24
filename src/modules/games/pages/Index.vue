@@ -5,7 +5,12 @@
         <h1>Games</h1>
       </v-col>
       <v-col cols="12" sm="3" offset-sm="3">
-        <v-select :items="ordenationOptions" :full-width="false" outlined />
+        <v-select
+          :items="ordenationOptions"
+          :full-width="false"
+          v-model="listOrder"
+          outlined
+        />
       </v-col>
     </v-row>
     <v-row>
@@ -59,12 +64,20 @@ export default {
     this.clearList();
   },
   computed: {
-    ...mapState("games", ["ordenationOptions"]),
-    ...mapGetters("games", { list: "getOrdenatedList" })
+    ...mapState("games", ["ordenationOptions", "orderBy"]),
+    ...mapGetters("games", { list: "getOrdenatedList" }),
+    listOrder: {
+      get() {
+        return this.orderBy;
+      },
+      set(order) {
+        this.setOrderBy(order);
+      }
+    }
   },
   methods: {
     ...mapActions("games", ["getList", "deleteItem"]),
-    ...mapMutations("games", ["clearList"])
+    ...mapMutations("games", ["clearList", "setOrderBy"])
   }
 };
 </script>
