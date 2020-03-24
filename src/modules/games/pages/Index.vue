@@ -18,7 +18,11 @@
           </v-row>
           <v-row>
             <v-col v-for="item in list" :key="item.id" cols="12" sm="4">
-              <GameCard :game="item" @click.native="addCartItem(item)" />
+              <GameCard
+                :game="item"
+                :in-cart="gameIsInCart(item)"
+                @click.native="toggleInCart(item, gameIsInCart(item))"
+              />
             </v-col>
           </v-row>
         </v-container>
@@ -47,7 +51,7 @@ export default {
     this.clearList();
   },
   computed: {
-    ...mapState("games", ["ordenationOptions", "orderBy"]),
+    ...mapState("games", ["ordenationOptions", "orderBy", "cartItems"]),
     ...mapGetters("games", { list: "getOrdenatedList" }),
     listOrder: {
       get() {
@@ -64,8 +68,18 @@ export default {
       "clearList",
       "setOrderBy",
       "addCartItem",
-      "removeCardItem"
-    ])
+      "removeCartItem"
+    ]),
+    gameIsInCart(game) {
+      return this.cartItems.indexOf(game) !== -1;
+    },
+    toggleInCart(game, isInCart) {
+      if (isInCart) {
+        this.removeCartItem(game);
+      } else {
+        this.addCartItem(game);
+      }
+    }
   }
 };
 </script>
