@@ -1,5 +1,10 @@
 # gamecommerce
 
+This project consumes JSON mock server located [here](https://gamecommerce-db.herokuapp.com/)
+
+[DEMO](https://gamecommerce.herokuapp.com/)
+
+
 ## Project setup
 ```
 yarn install
